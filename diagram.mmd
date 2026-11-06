@@ -1,0 +1,8 @@
+flowchart LR
+    A[Input: source URL + audience + why it matters] --> B[1. Gather\nEvidence ledger]
+    B -->|claims + source locations + confidence| C[2. Synthesize\nWhat changed / why it matters]
+    C -->|facts separated from inference| D[3. Draft\n250–350 word brief]
+    D --> E[4. Review\nClaim and citation gate]
+    E -->|PASS| F[5. Format\nPublishable Markdown]
+    E -->|HUMAN_REVIEW| H[Human checks source\nclarifies or rewrites]
+    H --> D

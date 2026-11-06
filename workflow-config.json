@@ -1,0 +1,23 @@
+{
+  "name": "weekly-ai-search-visibility-brief",
+  "version": "1.0",
+  "input_schema": {
+    "source_url": "string",
+    "why_it_matters": "string",
+    "audience": "string",
+    "publication_date": "string | unknown"
+  },
+  "nodes": [
+    {"id":"gather","label":"Gather","output":"evidence_ledger"},
+    {"id":"synthesize","label":"Synthesize","input":"evidence_ledger","output":"analysis"},
+    {"id":"draft","label":"Draft","input":"analysis + evidence_ledger","output":"draft"},
+    {"id":"review","label":"Review","input":"draft + evidence_ledger","output":"decision + issues"},
+    {"id":"format","label":"Format","input":"passing draft","output":"final_markdown"}
+  ],
+  "review_gate": {
+    "pass_values": ["PASS"],
+    "fail_values": ["HUMAN_REVIEW"],
+    "required_checks": ["every factual sentence maps to evidence", "links resolve", "date is not guessed", "inference is labeled"]
+  },
+  "retention": "Keep source URL, evidence ledger, review decision, and final brief together for auditability."
+}
