@@ -14,7 +14,7 @@ The workflow is intentionally tool-agnostic. It can be implemented in an n8n-sty
 - [`diagram.mmd`](diagram.mmd) — step diagram source.
 - [`workflow-config.json`](workflow-config.json) — portable node/handoff configuration.
 - [`prompts.md`](prompts.md) — every prompt used by the pipeline.
-- [`runs/`](runs/) — five real-source input runs with outputs and review notes.
+- `01-google-ai-features.md` through `05-structured-data.md` — five real-source input runs with outputs and review notes.
 
 ## How to run it manually
 
